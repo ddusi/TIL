@@ -62,3 +62,40 @@
 
 - `git push` origin master : github에 업로드 
 
+- `git clone` + [URL]  : github에서 저장소 내려받기
+
+
+
+## Github에 파일 추가
+
+1. `git add` <파일이름>  - 이 명령어로 인덱스에 추가
+
+2. `git commit -m` "이번 확정본에 대한 설명" - HEAD에 반영됐다.
+3. `git push` origin master - 로컬 저장소 HEAD에 반영
+4. `git remote add origin` <원격 서버 주소> - 원격 서버에 반영
+
+
+
+## 가지치기 (branch)
+
+![가지치기 예제를 보여드리죠.](https://rogerdudler.github.io/git-guide/img/branches.png)
+
+> 가지는 안전하게 격리된 상태에서 무언가를 만들 때 사용한다. 버전관리하는 것 처럼 이해 하면 쉽다.  master 가지에 따로 다른 가지를 만들어 개발을 진행하고, 나중에 merge를 이용해서 합치면 된다.
+
+- `git checkout - b` feature_x : 'feature_x'라는 이름의 가지를 만들고 갈아탄다.
+- `git checkout master` : master가지로 돌아온다.
+- `git branch -d` feature_x : 'feature_x'가지를 삭제한다.
+- `git push origin` <가지이름> : 다 만들었다면 원격 저장소에 전송한다.
+
+
+
+## 갱신과 병합 (merge)
+
+- `git pull` : 로컬저장소를 원격 저장소에 맞춰 갱신
+- `git merge` <가지 이름>: 다른 가지에 있는 내용을 master가지에 병합
+- `git diff` <원래 가지> <비교 대상 가지> : 변경 내용을 병합하기 전에, 어떻게 바뀌었는지 비교.
+- `git tag` 1.0.0 식별자 : 새 버전을 발표할 때 마다 꼬리표를 달아놓을 수 있다.
+- `git log` : 식별자를 확인 가능.
+
+
+
