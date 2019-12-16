@@ -11,9 +11,12 @@
   = git은 어렵다.
 
 - git은 버전을 통해 관리한다.
+
 - git은 폴더 단위로 관리한다. ('mkdir 만들고자 하는 폴더명')
 
 - LS 명령어: 디렉토리 리스트
+
+- git은 스냅샷 찍는 형식의 저장방식. commit
 
 # CLI
 
@@ -41,5 +44,21 @@
 
 - `rm` + [파일명] : 파일 삭제
 
+- `git add` + [파일명]: git 사진대에 올리는 것
+
+- git config --global user.email ["이메일"]
+
+  git config --global user.name ["이름"]
   
+- git commit -m ["메모"] : 사진을 찍는 것. (저장)
+
+- `git log` : 로그 보는것
+
+- `git checkout `: 과거로의 여행
+
+- `git checkout master`: 현재로 돌아오는 것
+
+- git remote add [저장소의 별명] [원격저장소 주소] : 저장소 첫번째는 보통 origin
+
+- `git push` origin master : github에 업로드 
 
