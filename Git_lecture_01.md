@@ -25,44 +25,25 @@
 ### 터미널 명령어들
 
 - `ls` : 폴더 내부의 파일 & 폴더를 나열
-
+- `ls -a` : 숨김파일도 나열함
 - `pwd` : 현재 폴더 경로 출력
-
 - `mkdir` + [폴더명] : 폴더 생성
-
 - `cd` + [폴더명] : 폴더 변경
-
 - `cd ..` : 상위폴더로 변경
-
-- `git init` :  폴더 관리해줘.
-
-- `ls -a` : 숨김 파일도 보여줘
-
-- `git status` : git의 상태
-
 - `touch` + [파일명.확장자] : 파일 만들기
 
-- `rm` + [파일명] : 파일 삭제
 
-- `git add` + [파일명]: git 사진대에 올리는 것
 
-- git config --global user.email ["이메일"]
+## Git 설정
 
-  git config --global user.name ["이름"]
-  
-- git commit -m ["메모"] : 사진을 찍는 것. (저장)
-
-- `git log` : 로그 보는것
-
-- `git checkout `: 과거로의 여행
-
-- `git checkout master`: 현재로 돌아오는 것
-
-- git remote add [저장소의 별명] [원격저장소 주소] : 저장소 첫번째는 보통 origin
-
-- `git push` origin master : github에 업로드 
-
-- `git clone` + [URL]  : github에서 저장소 내려받기
+1. `git init` : 폴더를 git으로 관리하기 시작함.
+   - .git 파일 생성.
+   - git init 선언한 폴더 하위에 또다른 git init가 있으면 안된다. (중복 불가)
+   - 설정한 폴더 기준으로 하위 폴더 모두 관리
+2. 이메일, 이름 설정하기 
+   1. git config --global user.email["이메일"]
+   2. git config -- global user.name["이름"]
+3. `git status` : git의 상태를 확인
 
 
 
@@ -70,11 +51,19 @@
 
 1. `git add` <파일이름>  - 이 명령어로 인덱스에 추가
 
-2. `git commit -m` "이번 확정본에 대한 설명" - HEAD에 반영됐다.
-3. `git push` origin master - 로컬 저장소 HEAD에 반영
-4. `git remote add origin` <원격 서버 주소> - 원격 서버에 반영
+2. `git commit -m` "메모" - HEAD에 반영됐다.
 
+   - commit 관리자 화면에 빠지면 `esc` 연타후 `:q`를 입력해서 빠져나온다.
 
+3. `git push origin master` - 로컬 저장소 HEAD에 반영
+
+4. `git remote add <원격저장소의 이름> <원격 서버 주소>` - 원격 서버에 반영 
+
+   - 첫번째 원격 저장소의 이름은 보통 origin으로 쓴다.
+
+   - `git remote -v` : 상세하게 정보 보는 것.
+
+   
 
 ## 가지치기 (branch)
 
@@ -89,9 +78,13 @@
 
 
 
-## 갱신과 병합 (merge)
+## Push and Pull과 merge
 
-- `git pull` : 로컬저장소를 원격 저장소에 맞춰 갱신
+- `git pull` : 원격저장소에서 데이터를 가져오는 것
+  - `git pull` origin master  
+- `git push` : 원격 저장소에 데이터를 보내는 것 
+  - `git push` origin master
+- `git clone` [URL] : 처음에 프로젝트 전체를 복사해서 가져오는 것 
 - `git merge` <가지 이름>: 다른 가지에 있는 내용을 master가지에 병합
 - `git diff` <원래 가지> <비교 대상 가지> : 변경 내용을 병합하기 전에, 어떻게 바뀌었는지 비교.
 - `git tag` 1.0.0 식별자 : 새 버전을 발표할 때 마다 꼬리표를 달아놓을 수 있다.
@@ -99,3 +92,16 @@
 
 
 
+## Git 수정
+
+- `rm` : 파일 지우는 명령어
+
+  - `rm -r` : 폴더 지우는 명령어
+
+-  `mv` [이동할 폴더]/ [이동될 장소] : 폴더 이동 명령어
+
+- `git log` : github 로그 보기
+
+  - git log --oneline : 한줄로 로그 보기
+
+  
