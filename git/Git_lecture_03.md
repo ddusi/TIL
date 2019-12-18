@@ -1,12 +1,4 @@
-# (1)협업하는 방법
-
-1. Settings 
-
-   > Collaborators에서 사람을 추가하기.
-
-
-
-# (2)git branch
+# git branch
 
 1. `git branch`: 세계(branch) 나열 
 
