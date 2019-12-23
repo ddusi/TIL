@@ -1,4 +1,4 @@
-## 시험 12월 27일 (금)
+## `시험 12월 27일 (금)
 
 12/27일 금요일 필기
 
@@ -20,11 +20,11 @@
 
 > http://spring.io/tools
 
-​	java -jar sp[tab키]
+​	1. 파워쉘에서 	java -jar sp[tab키]
 
-​	제어판 - 시스템 - 환경변수 - path - java폴더
+​	2. 제어판 - 시스템 - 환경변수 - path - java폴더
 
-​	C:\Program Files\bin 경로를 풀로 써서 실행
+​	3. 파워쉘에서	 C:\Program Files\bin 경로를 풀로 써서 실행
 
 
 
@@ -44,7 +44,7 @@
 
 ![image-20191223094019058](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191223094019058.png)
 
-- Dependencies
+- Dependencies (필수 라이브러리들)
 
   ![image-20191223094502968](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191223094502968.png)
 
@@ -56,7 +56,13 @@
 
 ![image-20191223100125380](01_Spring.assets/image-20191223100125380.png)
 
-#### 5.  통신 흐름
+> Ctrl + f11 키를 눌러서 실행한다.
+
+
+
+
+
+#### 5.  Spring의 통신 흐름
 
 > 클라이언트 요청 - 서버 응답1
 
@@ -80,6 +86,8 @@
 
 
 
+
+
 #### 6. 파일 생성하기 
 
  - `com.ddusi.basic`에 `package `생성
@@ -94,8 +102,10 @@
 
   - 메소드 import `@RestController`
 
-    ​							`@GetMapping`
+    ​							`@GetMapping`	 : html 파일이랑 연동 
 
+    ​							이 두가지 메소드만 있어서 서버 구동!
+    
     ```java
     package com.ddusi.basic.controller;
     
@@ -129,6 +139,8 @@
 
   ![image-20191223102649994](01_Spring.assets/image-20191223102649994.png)
 
+
+
 #### Controller 구조
 
 ```java
@@ -139,9 +151,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class Test2Controller {
-	@GetMapping("/test2")
+	@GetMapping("/test2")		// http://localhost:8080/test2와 연동.
 	public String test2() {
-		return "hello";
+		return "hello";			//return "hello"로 바로 hello 출력.
 	}
 }
 ```
@@ -164,7 +176,7 @@ public class Test2Controller {
 
 
 
-* `@RestController`, 	`@Controller `와 차이점
+* #### `@RestController`, `@Controller `와 차이점
 
   `@RestController`: return에 내용을 바로 인코딩한다.
 
@@ -236,7 +248,12 @@ logging.level.com.ddusi.basic=trace
 
 
 
--  shift + alt + A : 열 편집기능
+#### 자주쓰는 단축키
+
+- `shift + ctrl + F` : 자동 정렬
+- `shift + ctrl + O` : import 자동으로 추가
+
+-  `shift + alt + A` : 열 편집기능
 
 
 
@@ -410,7 +427,7 @@ logging.level.com.ddusi.basic=trace
 
 
 
-- 응답방식
+- #### 응답방식
 
   - HTML
 
@@ -848,14 +865,14 @@ logging.level.com.ddusi.basic=trace
 
 
 
-- **Modelattribute**(명확함)
+- **ModelAttribute**(명확함)
 
   ```
   - Model / DTO / VO 등 객체와 연계하여 활용
   
   - JPA, MyBatis 등 ORM 프레임워크 활용 
   
-  - Model에 작성되어 있는 변수/자료형과 파라미터명이 동일하면 자동으로 대입
+  - Model에 작성되어 있는 `변수/자료형과 파라미터명이 동일하면 자동으로 대입`
   
   - JPA/MyBatis 등 ORM 프레임워크 연계 시 편리하게 사용 가능
   
@@ -864,6 +881,8 @@ logging.level.com.ddusi.basic=trace
 
 > 파라미터를 받는 방법 (로그인시)
 
+![image-20191223193838980](01_Spring.assets/image-20191223193838980.png)
+
 
 
 #### 구조 
@@ -871,7 +890,7 @@ logging.level.com.ddusi.basic=trace
 ```java
 @GetMapping("req/model")
 public String model(
-@ModelAttribute Member member) {
+	@ModelAttribute Member member) {
 return member.toString();
 ```
 
@@ -879,11 +898,37 @@ return member.toString();
 http://localhost:8080/req/model?name=11&userId=22&userPassword=33
 ```
 
+
+
+#### member.java
+
+````java
+package com.ddusi.basic.model;
+import lombok.Data;
+
+@Data
+public class Member {
+	private String name;
+	private String userId;
+	private String userPassword;
+	}
+````
+
+```
+localhost:8080/req/model?name=11&userId=22&userPassword=33
+```
+
+
+
 #### result
 
 ```
 Member(name=11, userId=22, userPassword=33)
 ```
+
+
+
+
 
 
 
@@ -991,7 +1036,7 @@ Message
 thymeleaf
 ```
 
-
+> ### 타임리프 연산자의 다양한 사용법
 
 
 
@@ -1085,7 +1130,7 @@ public class ThymeleafController {
 
 
 
-		#### 		3. Thymeleaf Controller2.java 
+#### 	3. Thymeleaf Controller2.java 
 
 ```java
 	@GetMapping("userList")
@@ -1151,4 +1196,80 @@ public class ThymeleafController {
 
 ![image-20191223172403919](01_Spring.assets/image-20191223172403919.png)
 
-> 
+>
+
+
+
+
+
+#### 3. 페이지 번호 목차 
+
+#### Thymeleaf Controller lteration.java
+
+```java
+	 @GetMapping("pagination")		// http://localhost:8080/pagination으로 연동
+	 public String pagination(Model model,
+			 @RequestParam(value="page", defaultValue="1") int page) {
+	 int startPage = (page - 1) / 10 * 10 + 1;		//자신의 위치를 알아내기 위한 꼼수 수식
+	 int endPage = startPage + 9;		//한 페이지에 출력할 번호 범위 
+	 model.addAttribute("startPage", startPage);
+	 model.addAttribute("endPage", endPage);
+	 model.addAttribute("page", page);
+	 return "pagination";		//pagination.html으로 return
+	 }
+
+	 @GetMapping("linkUrl")		// 숫자 클릭시 link 연결 url
+	 public String linkUrl(Model model, @RequestParam(defaultValue="1") int page) {
+ 	int startPage = (page - 1) / 10 * 10 + 1;
+ 	int endPage = startPage + 9;
+ 	model.addAttribute("startPage", startPage);
+ 	model.addAttribute("endPage", endPage);
+ 	model.addAttribute("page", page);
+ 	return "linkUrl";
+	 }
+```
+
+
+
+#### userList.html
+
+```html
+<body>
+	<table border="1">
+		<tr>
+			<td>아이디</td>
+			<td>이름</td>
+			<td>나이</td>
+		</tr>
+		<tr th:each="user : ${userList}">
+			<td th:text="${user.userId}"></td>
+			<td th:text="${user.userName}"></td>
+			<td th:text="${user.userAge}"></td>
+		</tr>
+	</table>
+	<hr>
+	<th:block th:each="pageNumber : ${#numbers.sequence(1, 10)}">
+		<span th:text="${pageNumber}"></span>
+	</th:block>
+</body>
+```
+
+
+
+#### linkUrl.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<th:block th:each="pageNumber : ${#numbers.sequence(1, 10)}">
+		<a th:href="@{/linkUrl(page=${pageNumber})}" th:text="${pageNumber}"></a>
+	</th:block>
+</body>
+</html>
+```
+
