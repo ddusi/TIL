@@ -1,10 +1,12 @@
 ## 시험 12월 27일 (금)
 
-1. Java, HTML
-2. CSS/Java Script
-3. Spring
+12/27일 금요일 필기
 
-12/27일 금요일 필기, 실기 
+필기: java, HTML, CSS, Java Script 
+
+실기(수행평가):  Spring
+
+	> 약 3시간 따리
 
 
 
@@ -88,11 +90,11 @@
 
   ![image-20191223101411160](01_Spring.assets/image-20191223101411160.png)
 
-  ##### 기본구조 내용
+  ##### 기본구조 내용 (컨트롤러 클래스 생성)
 
-  - import `@RestController`
+  - 메소드 import `@RestController`
 
-    ​				`@GetMapping`
+    ​							`@GetMapping`
 
     ```java
     package com.ddusi.basic.controller;
@@ -265,13 +267,15 @@ logging.level.com.ddusi.basic=trace
 
 #### 9. 응답 처리
 
+> `@ResponseBody` 또는  `@RestController`
+>
+> `JSON` 또는 `HTML`
+
 - **HTML / JSON / XML / Excel / PDF / Image / File** (zip, exe 등) 
 - HTML 
   - **String / void / Map / Model / ModelAndView / DTO **
 - JSON 
   -  Map / DTO / List
-
-
 
 
 
@@ -883,5 +887,268 @@ Member(name=11, userId=22, userPassword=33)
 
 
 
-### 
+### 13. HTML template - Thymeleaf
 
+```
+- 스프링 부트에서 권장하는 HTML Template 
+
+- HTML5 문법을 사용하는 HTML 태그 및 속성 기반의 Template Engine 
+
+- 텍스트, HTML, XML, JavaScript, CSS 등 생성 가능
+
+- Controller에서 View로 넘겨준 Model을 이용하여 데이터 출력
+```
+
+> 예전엔 JSP를 사용했지만 요즘은 Thymeleaf로 바뀌는 추세.
+
+
+
+#### 		1. Welcome Controller.java
+
+```java
+package com.ddusi.basic.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.ddusi.basic.model.Member;
+
+@Controller
+public class WelcomeController {
+	@GetMapping("/welcome")
+	//                    HTML Template 에게 넘겨줄 데이터
+	public String welcome(Model model) {
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		model.addAttribute("key1", list);
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("a", "value a");
+		map.put("b", "value b");
+		model.addAttribute("key2", map);
+		
+		Member member = new Member();
+		member.setUserId("a");
+		member.setName("spring");
+		member.setUserPassword("1234");
+		model.addAttribute("member", member);
+		
+		model.addAttribute("message", "thymeleaf");
+		return "welcome";
+	}
+}
+```
+
+#### 		welcome.html
+
+```html
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<h1>List</h1>
+	<h3>[[${key1}]]</h3>
+	<h3>[[${key1[0]}]]</h3>
+    
+	<h1>Map</h1>
+	<h3>[[${key2}]]</h3>
+	<h3>[[${key2.a}]]</h3>
+	<h3>[[${key2['b']}]]</h3>
+    
+	<h1>Member</h1>
+	<h3>[[${member}]]</h3>
+	<h3>[[${member['userId']}]]</h3>
+	<h3>[[${member.userPassword}]]</h3>
+    
+	<h1>Message</h1>
+	<h3>[[${message}]]</h3>
+</body>
+</html>
+```
+
+#### 		result
+
+```
+List
+[a, b]
+a
+Map
+{a=value a, b=value b}
+value a
+value b
+Member
+Member(name=spring, userId=a, userPassword=1234)
+a
+1234
+Message
+thymeleaf
+```
+
+
+
+
+
+
+
+
+
+#### 		2. Thymeleaf Controller.java
+
+```java
+package com.ddusi.basic.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ThymeleafController {
+	@GetMapping("user")
+	public String user(Model model) {
+		Map<String, Object> user = null;
+		user = new HashMap<>();
+		user.put("userId", "z");
+		user.put("userName", "zoo");
+		user.put("userAge", 25);
+		model.addAttribute("user", user);
+		return "user";
+	}
+}
+```
+
+#### 		user.html
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	아이디:
+	<span>[[${user.userId}]]</span>
+	<br> 이름:
+	<span>[[${user.userName}]]</span>
+	<br> 나이:
+	<span>[[${user.userAge}]]</span>
+	<br>
+	<hr>
+	아이디:
+	<span th:text="${user.userId}"></span>
+	<br> 이름:
+	<span th:text="${user.userName}"></span>
+	<br> 나이:
+	<span th:text="${user.userAge}"></span>	<!-- 선생님이 선호하시는 방법 -->
+	<br>
+	<hr>
+	아이디:
+	<span data-th-text="${user.userId}"></span>
+	<br> 이름:
+	<span data-th-text="${user.userName}"></span>
+	<br> 나이:
+	<span data-th-text="${user.userAge}"></span>
+	<br>
+</body>
+</html>
+```
+
+#### 		result
+
+```
+아이디: z
+이름: zoo
+나이: 25
+
+아이디: z
+이름: zoo
+나이: 25
+
+아이디: z
+이름: zoo
+나이: 25
+```
+
+> 출력물은 다 같다. 타임리프의 세가지 표현법에 대한 것.
+
+
+
+
+
+		#### 		3. Thymeleaf Controller2.java 
+
+```java
+	@GetMapping("userList")
+	public String userList(Model model) {
+		List<Map<String, Object>> userList = new ArrayList<>();
+		Map<String, Object> user = null;
+
+		user = new HashMap<>();
+		user.put("userId", "a");
+		user.put("userName", "apple");
+		user.put("userAge", 21);
+		userList.add(user);
+
+		user = new HashMap<>();
+		user.put("userId", "b");
+		user.put("userName", "banana");
+		user.put("userAge", 22);
+		userList.add(user);
+
+		user = new HashMap<>();
+		user.put("userId", "c");
+		user.put("userName", "carrot");
+		user.put("userAge", 23);
+		userList.add(user);
+
+		model.addAttribute("userList", userList);
+
+		return "userList";
+}
+```
+
+#### 		userList.html
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>아이디</td>
+			<td>이름</td>
+			<td>나이</td>
+		</tr>
+		<tr th:each="user : ${userList}">
+			<td th:text="${user.userId}"></td>
+			<td th:text="${user.userName}"></td>
+			<td th:text="${user.userAge}"></td>
+		</tr>
+	</table>
+	<hr>
+	<th:block th:each="pageNumber : ${#numbers.sequence(1, 10)}">
+		<span th:text="${pageNumber}"></span>
+	</th:block>
+</body>
+</html>
+```
+
+#### 		result
+
+![image-20191223172403919](01_Spring.assets/image-20191223172403919.png)
+
+> 
