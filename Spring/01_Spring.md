@@ -714,7 +714,7 @@ logging.level.com.ddusi.basic=trace
 
 
 
-   1. 방법
+ 1. 방법
    
       ```java
       package com.ddusi.basic.controller;
@@ -751,7 +751,7 @@ logging.level.com.ddusi.basic=trace
    
       
    
-   2. 방법
+2. 방법
    
       ```java
       package com.ddusi.basic.controller;
