@@ -1,10 +1,8 @@
 ## 1. Spring tool suite 4로 github랑 연동하기
 
-1. file > import > Git > prijects from Git > next > clone URI
+1. file > import > Git > projects from Git > next > clone URI
 
-
-
-
+![git사용](04_Spring_AOP.assets/git사용.png)
 
 ## 2. HTTP
 
@@ -15,6 +13,8 @@
 > https를 이용하려면 인증서를 갖고 있는 서버에서 구매를 해야한다.
 >
 > 우리의 파일을 서버에 업로드하면 그쪽에서 https로 보호해준다.
+
+
 
 - 특징 
 
@@ -39,6 +39,22 @@
   개발자도구 > Application > Cookies에서 모두 삭제.
 
 - 세션만료 : 보통 15,30분으로 설정되어있다.
+
+
+
+#### 특징
+
+● 클라이언트에 대한 정보를 서버에 저장할 수 있는 공간 
+
+● 접속하는 클라이언트 당 하나의 세션 생성 
+
+● 사물함과 같은 형식으로 저장이 되며 사물함의 번호를 클라이언트로 전송 
+
+● 번호를 분실하는 경우 새로운 세션을 생성하고 다시 클라이언트로 전송 
+
+● 설문조사와 같이 여러단계로 정보 입력 시, 로그인 후 사용 내역 저장 등 활용
+
+
 
 
 
