@@ -1,8 +1,42 @@
 ## 1. Spring tool suite 4로 github랑 연동하기
 
-1. file > import > Git > projects from Git > next > clone URI
+> 스프링 툴을 이용하여 깃허브랑 연동할땐, .git파일도 스프링 툴로 만들어 관리하자.
+
+ 
+
+1. 프로젝트 파일을 github에 올리기 
+
+   - 프로젝트 폴더 우클릭
+   - team > share project
+
+   ![image-20191224205418438](04_Spring_AOP.assets/image-20191224205418438.png)
+
+   - 레퍼지토리 경로를 관리할 곳으로 지정한다. 
+   - 지정 후 Team > Commit > Commit and push 로 올린다. 
+
+
+
+
+2. github 에서 프로젝트 다운로드 하기 
+   - file > import > Git > projects from Git > next > clone URI
+
+![image-20191224205815189](04_Spring_AOP.assets/image-20191224205815189.png)
+
+> 레포지토리에는 Spring 파일만 있어야 한다. 왜그런지 모르겠지만, 하위폴더에 Spring파일을 관리하면 인식을 못한다...
+
+
+
+
+
+### 스프링 툴에서 Git 구동 방식
 
 ![git사용](04_Spring_AOP.assets/git사용.png)
+
+
+
+
+
+
 
 ## 2. HTTP
 
@@ -23,6 +57,10 @@
      > 로그인이 풀리는 현상이 있기 때문에 Session이라는 개념이 생겼다.
 
 
+
+
+
+ 
 
 ## 3. Session
 
@@ -53,6 +91,103 @@
 ● 번호를 분실하는 경우 새로운 세션을 생성하고 다시 클라이언트로 전송 
 
 ● 설문조사와 같이 여러단계로 정보 입력 시, 로그인 후 사용 내역 저장 등 활용
+
+
+
+
+
+#### 기본구조
+
+##### controller/SessionController.java
+
+```java
+package com.ddusi.basic.controller;
+import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import com.ddusi.basic.model.User;
+
+@Controller
+public class SessionController {
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+
+	@PostMapping("/login")
+	public String loginPost(
+			User user, // @ModelAttribute("user") user, user
+			HttpSession session) {
+		// 세션은 어디서든지 (현재 스프링 서버) 사용 가능
+		session.setAttribute("user", user);
+		// 지정된 주소로 이동(떠넘김)
+		return "redirect:/main"; // /main주소로 바로 던져버리겠다.
+	}
+
+	@GetMapping("/main")
+	public String main() {
+		return "main";
+	}
+}
+```
+
+
+
+#### model/User.java
+
+````java
+package com.ddusi.basic.model;
+
+import lombok.Data;
+
+@Data
+public class User {
+	private String userId;
+	private String userPw;
+}
+````
+
+
+
+##### templates/login.html
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/login" method="post">
+		ID : <input type="text" name="userId"><br> PW : <input
+			type="password" name="userPw"><br> <input type="submit"
+			value="로그인">
+	</form>
+</body>
+</html>
+```
+
+
+
+##### templates/main.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p th:if="${session.user} != null" 
+		th:text="${session.user.userId} + '님 반갑습니다.'"></p> 
+    													<!-- session.으로 쓰면 바로 출력 -->
+	<p th:unless="${session.user} != null">로그인되어 있지 않 습니다.</p>
+</body>
+</html>
+```
 
 
 
