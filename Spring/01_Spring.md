@@ -34,7 +34,7 @@
 
 - lombok 1.18.0 으로 설치한다.
 
-- SpringToolSuite4.exe파일을 선택하여 설치한다.![image-20191223093747315](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191223093747315.png)
+- SpringToolSuite4.exe파일을 선택하여 설치한다.![image-20191223093747315](01_Spring.assets/image-20191223093747315.png)
 
 
 
@@ -42,11 +42,11 @@
 
 - name, type, group, package 선택
 
-![image-20191223094019058](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191223094019058.png)
+![image-20191223094019058](01_Spring.assets/image-20191223094019058.png)
 
 - Dependencies (필수 라이브러리들)
 
-  ![image-20191223094502968](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191223094502968.png)
+  ![image-20191223094434723](01_Spring.assets/image-20191223094434723.png)
 
 
 
