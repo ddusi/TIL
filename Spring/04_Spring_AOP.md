@@ -28,7 +28,7 @@
 
 > 브라우저에 저장되는 쿠키
 
-![image-20191224133719648](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191224133719648.png)
+![image-20191224133719648](04_Spring_AOP.assets/image-20191224133719648.png)
 
 
 
@@ -68,7 +68,9 @@
 
  #### 관점 지향 프로그래밍 (Aspect Oriented Programming)
 
-![image-20191224151413259](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191224151413259.png)
+
+
+![image-20191224151413259-1577184108718](04_Spring_AOP.assets/image-20191224151413259-1577184108718.png)
 
 > 클라이언트가 접속할 때, 가장 먼저 공통적으로 실행되어야 할 클래스를 지정할 수 있다.
 
@@ -76,7 +78,7 @@
 
 
 
-![image-20191224192049776](03_Spring_AOP.assets/image-20191224192049776.png)
+![image-20191224192049776](04_Spring_AOP.assets/image-20191224192049776.png)
 
 > 거시적인 관점에서 본다면 AOP를 통해서 공통적인 업무를 따로 빼서 관리하고,
 >
@@ -95,22 +97,21 @@
   - **트랜잭션** 처리
 
     > 스프링에서는 코드 한줄만 쓰면 사용 가능 
-  >
+    >
     > 일단, 모든 프로세서가 하나라도 제대로 구동이 안되면 실행이 되지 않는다 라고만 이해하자
-
-  - 예외반환
-
-  - 로깅, 인증, 권한 처리
-
-  - 로그 남기기
+- 예외반환
+  
+- 로깅, 인증, 권한 처리
+  
+- 로그 남기기
   
   
-
+  
 - AOP 용어
 
-  ![image-20191224152731303](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191224152731303.png)
+  ![image-20191224152731303](04_Spring_AOP.assets/image-20191224152731303.png)
 
-  ![image-20191224152808264](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191224152808264.png)
+  ![image-20191224152805033](04_Spring_AOP.assets/image-20191224152805033.png)
 
 
 
@@ -168,11 +169,9 @@
 
 ​		 리턴 타입 : All, 메소드명 : get으로 시작, 파라미터 : 2개
 
-### 
 
 
-
-    ## 5. ControllerAdvice
+##### 5. ControllerAdvice
 
 - Controller에서 발생되는 **오류를 감지하고 처리**해주는 기능
 - 사용이유
@@ -290,7 +289,7 @@ public class ControllerAspect {
   - Logging - Encoding 
   - IP 검사 등
 
-![image-20191224162240683](03_Spring_AOP.assets/image-20191224162240683.png)
+![image-20191224162240683](04_Spring_AOP.assets/image-20191224162240683.png)
 
 
 
@@ -470,13 +469,15 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 ### AOP, Filter, Interceptor 동시에 실행 할때, 우선순위
 
-![image-20191224190112826](03_Spring_AOP.assets/image-20191224190112826.png)
+![image-20191224190112826](04_Spring_AOP.assets/image-20191224190112826.png)
+
+
 
 
 
 #### console창에서의 결과
 
-![image-20191224191301848](03_Spring_AOP.assets/image-20191224191301848.png)
+![image-20191224191301848](04_Spring_AOP.assets/image-20191224191301848.png)
 
 > 구동 순서 
 >
@@ -493,8 +494,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
 - Java Persistence API 
 
 - **ORM 프레임워크 (Object Relational Mapping)** 
-  - 객체는 객체대로, 관계형 데이터베이스는 관계형 데이터베이스대로 설계 
-
+  
+- 객체는 객체대로, 관계형 데이터베이스는 관계형 데이터베이스대로 설계 
+  
 - 특징 - DAO와 Database Table의 강한 의존성 문제 해결 
    - Model(자바 클래스)을 작성하면 자동으로 Table 생성 
    - SQL 문장을 이용하지 않고 메소드를 호출하면 자동으로 SQL 문장 실행 
@@ -509,7 +511,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
     > 모든 데이터베이스 프로그램 별로 변환해줌.
 
-![image-20191224171340346](03_Spring_AOP.assets/image-20191224171340346.png)
+![image-20191224171340346](04_Spring_AOP.assets/image-20191224171340346.png)
 
 
 
@@ -517,11 +519,11 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 - H2 데이터베이스 설치 - https://h2database.com/html/main.html
 
-![image-20191224172039918](03_Spring_AOP.assets/image-20191224172039918.png)
+![image-20191224172039918](04_Spring_AOP.assets/image-20191224172039918.png)
 
 - H2 데이터베이스 실행
 
-<img src="03_Spring_AOP.assets/image-20191224172110229.png" alt="image-20191224172110229" style="zoom: 200%;" />
+<img src="04_Spring_AOP.assets/image-20191224172110229.png" alt="image-20191224172110229" style="zoom: 200%;" />
 
 > 저장한 설정이름을 Embedded를 최초로 실행해야 데이터베이스 파일이 만들어진다. 이 이후에 sever파일로 실행해야 구동가능
 >
@@ -529,7 +531,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 - H2 끄는법
 
-![image-20191224172857498](03_Spring_AOP.assets/image-20191224172857498.png)
+![image-20191224172857498](04_Spring_AOP.assets/image-20191224172857498.png)
 
 > 여기서 꺼야지만 꺼진다.
 
@@ -564,7 +566,7 @@ spring.jpa.show-sql=true
 
 #### JPA를 이용하여 각 DB로 변환시켜주는 것
 
-![image-20191224174413988](03_Spring_AOP.assets/image-20191224174413988.png)
+![image-20191224174413988](04_Spring_AOP.assets/image-20191224174413988.png)
 
 > application.properties파일에서
 >
@@ -666,7 +668,7 @@ public class JpaController {
 
 #### 2. POST 리더기를 이용하여 POST방식으로 서버에 데이터 전송
 
-![image-20191224184533542](03_Spring_AOP.assets/image-20191224184533542.png)
+![image-20191224184533542](04_Spring_AOP.assets/image-20191224184533542.png)
 
 > - POST 방식으로 손쉽게 데이터 전송을 하기위해 크롬프로그램 리더기를 이용함. 
 >
@@ -680,7 +682,7 @@ public class JpaController {
 
 #### 3. H2 데이터베이스로 테이블 확인하기
 
-![image-20191224185401525](03_Spring_AOP.assets/image-20191224185401525.png)
+![image-20191224185401525](04_Spring_AOP.assets/image-20191224185401525.png)
 
 
 
@@ -688,7 +690,7 @@ public class JpaController {
 
 
 
-![image-20191224185522803](03_Spring_AOP.assets/image-20191224185522803.png)
+![image-20191224185522803](04_Spring_AOP.assets/image-20191224185522803.png)
 
 > 크롬에서 확인한 결과
 
