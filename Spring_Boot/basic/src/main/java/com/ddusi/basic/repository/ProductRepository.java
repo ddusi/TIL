@@ -7,4 +7,6 @@ import com.ddusi.basic.model.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
+	public Product findByName(String name);
 }
+// 자식 extends 부모 : 상속받는다. 

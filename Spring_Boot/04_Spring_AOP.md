@@ -847,3 +847,18 @@ public class JpaController {
 
 
 
+
+
+### JPA 주요 메소드
+
+\- 데이터 입력 및 수정 (insert / update) : save(T t) 
+
+- 데이터 조회 (select) : findAll() / findById(ID) 
+- 데이터 삭제 (delete) : delete(T t) 
+- 데이터 개수 확인 : count()
+
+
+
+### 사용자 정의 메소드 규칙
+
+![image-20191226101315797](04_Spring_AOP.assets/image-20191226101315797.png)
