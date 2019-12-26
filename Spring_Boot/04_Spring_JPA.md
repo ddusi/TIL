@@ -479,27 +479,94 @@ public class SverviceController {
 
 
 
+
+
 ### 네이버 파파고 API 이용하여 한글 영어로 번역하기
 
-
-
-
-
 ##### RestTemplateController.java
+
+```java
+	@GetMapping("/getNaver")
+	public ResponseEntity<Map> getNaver(
+			@RequestParam("text") String text) {
+		RestTemplate rt = new RestTemplate();
+		
+		RequestEntity<Map<String, String>> requestEntity = null;
+		try {
+			Map<String, String> body = new HashMap<>();
+			body.put("source", "ko");
+			body.put("target", "en");
+			body.put("text", text);
+			
+			requestEntity = RequestEntity.post(new URI("https://openapi.naver.com/v1/papago/n2mt"))
+					.header("X-Naver-Client-Id", "OpcnSsAIn37qIu6Iyad6").header("X-Naver-Client-Secret", "p7qtbsYx8N")
+					.body(body);
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+		ResponseEntity<Map> entity = rt.exchange(requestEntity, Map.class);
+		return entity;
+	}
+```
 
 
 
 ##### SverviceController.java
 
+```java
+@Controller
+public class SverviceController {
+	@GetMapping("/naver")
+	public String naver() {
+		return "naver";
+	}
+}
+```
+
 
 
 ##### kakao.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+	<script src = "http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<input type="text" id="text">
+	<button>번역</button>
+	<hr>
+	<!-- 자바스크립트 (jQuery) AJAX 활용 -->
+	<!-- getKakao 주소를 호출 -->
+	<!-- parsing 후 화면에 출력 -->
+	<script>
+		$('button').click(function() { // 버튼을 클릭하면..
+			$.ajax({
+				url : '/getNaver',
+				type : 'get',
+				data : {'text' : $('#text').val() },
+				success : function(res) {
+					var message = res.message; 
+					var result = message.result;
+					var translatedText = result.translatedText;
+					var html = '<h1>' + translatedText + '</h1>';
+					$('hr').after(html);
+				}
+			})
+		});
+	</script>
+</body>
+</html>
+```
 
 
 
 ##### result
 
-
+![image-20191226194903912](04_Spring_JPA.assets/image-20191226194903912.png)
 
 
 
