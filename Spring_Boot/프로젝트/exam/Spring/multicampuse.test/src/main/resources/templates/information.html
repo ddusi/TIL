@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>인공지능 정보</title>
+</head>
+<body>
+	<button>시작</button>
+	<div></div>
+	<script src='http://code.jquery.com/jquery-3.3.1.min.js'> </script>
+	<script>
+		$('button').click(function() {
+			$.ajax({
+				url : '/get',
+				type : 'get',
+				data : {},
+	            success: function (result) {
+	                var items = result.items;
+	                var code = "";
+	                for (var i = 0; i < items.length; i++) {
+	                    var item = items[i];
+	                    var snippet = item.snippet;
+	                    var title = snippet.title;
+	                    var description = snippet.description;
+	                    var thumbnails = snippet.thumbnails;
+	                    var url = thumbnails.default.url;
+	                    var width = thumbnails.default.width;
+	                    var height = thumbnails.default.height;
+	                    console.log(title);
+	                    console.log(description);
+	                    console.log(url);
+	                    console.log(width);
+	                    console.log(height);
+	                    
+	                    
+	                    code += '<div>';
+	                    code += '<img src="' + url + '" width="' + width + '", height=' + height + '>';
+	                    code += '<h4>' + title + '</h4>';
+	                    code += '<p>' + description + '</p>';
+	                    code += '</div>';
+	                    $("div").html(code);
+	                }
+	                
+	            }
+			})
+		});
+</script>
+</body>
+</html>

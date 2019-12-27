@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>고객정보관리 시스템</title>
+<style>
+input[type="text"] {
+	width: 150px;
+	background-color: #DAEDFA;
+	border: 1px solid #000;
+}
+
+fieldset {
+	border-radius: 20px;
+	background-color:#FAE6DA !important;
+}
+
+legend {
+	font-size: 20px; 
+	font-weight : bold;
+}
+
+</style>
+</head>
+<body>
+	<!-- 고객 정보 관리 시스템 WEB UI 버전
+고객 정보 등록 화면을 HTML5, CSS, Javascript를 이용하여 구현하시오.
+
+고객의 정보는 이름, 성별, 이메일, 출생년도 가 있습니다.​
+​이름은 문자열, 성별은 남자는 M, 여자는 F,​이메일은 문자열, 태어난 연도는 정수​
+ -->
+
+
+	<h1>고객 정보 관리 시스템</h1>
+	<fieldset>
+		
+			<legend>고객정보 입력</legend>
+			<form>
+				<ul>
+					<li><label>이름 : <input type="text" name="name">
+					</label></li>
+					<li><label>성별 : <input type="radio" name="sex"
+							id="sex" value="M">남자
+					</label> <label><input type="radio" name="sex" id="sex" value="F">여자</label>
+					</li>
+					<li><label>이메일 : <input type="text" name="email">
+					</label></li>
+					<li><label>출생년도 : <input type="text" name="birthday">
+					</label></li>
+					<input type="button" value="제출" onclick="run()">
+				</ul>
+			</form>
+	</fieldset>
+
+	<script>
+		function run() {
+
+			var name = document.querySelector("[name=name]").value;
+			var sex = document.querySelector("[name=sex]").value;
+			var email = document.querySelector("[name=email]").value;
+			var birthday = document.querySelector("[name=birthday]").value;
+			alert(name + sex + email + birthday)
+		}
+	</script>
+</body>
+</html>
