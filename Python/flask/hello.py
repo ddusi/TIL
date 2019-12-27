@@ -42,13 +42,5 @@ def movies():
     movie = ['조커', '겨울왕국2', '터미네이터', '어벤져스']
     return render_template('movies.html', movies = movie)
 
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     app.run(debug=True)
