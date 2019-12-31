@@ -105,6 +105,26 @@
     <tr>
     	<td>radio</td>
         <td>주어진 항모게서 1개만 선택할 수 있는 라디오버튼</td>
+    <tr>
+    	<td>button</td>
+        <td>버튼을 넣습니다.</td>
+    </tr>
+        <tr>
+    	<td>file</td>
+        <td>파일을 첨부할 수 있는 버튼을 넣습니다.</td>
+    </tr>
+        <tr>
+    	<td>submit</td>
+        <td>서버 전송 버튼을 넣습니다.</td>
+    </tr>
+    <tr>
+    	<td></td>
+        <td></td>
+    </tr>
+    <tr>
+    	<td></td>
+        <td></td>
+    </tr>
     </tr>
         <tr>
     	<td>hidden</td>
@@ -140,26 +160,107 @@
 
 ​    
 
+#### 그밖에 다른 type들 
+
+#### type=“reset” – 리셋 버튼 
+
+- 요소에 입력된 정보들을 모두 리셋시킴 
+
+- 사용자가 입력핚 내용을 모두 지움. 
+
+- value 속성을 사용하여 버튼에 표시할 내용 지정. 
+
+
+
+#### type=“image” – 전송 버튼 
+
+- submit 버튼 대신 이미지 사용
+
+
+
+#### readonly 속성 
+
+- readonly 속성은 해당 필드를 읽기 전용으로 바꾼다. 
+
+- 필드 안에 내용이 있으면서 사용자에게 내용을 보여주기만 하고 사용자가 입력은 할 수 없게 한다. 
+
+- 인기 전용으로 하려면 readonly=“true” 또는 readonly
+
 ​    
 
+#### placeholder 속성 
 
-  
+- 요소의 필드 안에 적당한 힌트 내용을 표시하고 있다가 그 필드를 클릭하면 내용이 사라지도 록 하는 것 
 
+- 텍스트 필드 앞에 레이블을 사용하지 않고도 어떤 내용을 입력해야 할지 알려줄 수 있어 편리하다.
 
-
-
-
-
-
+![image-20200101001810795](04_Form_Tag.assets/image-20200101001810795.png)
 
 
 
+#### required 속성 
+
+• [submit] 단추를 클릭해서 서버로 폼을 전송할 때 **필수 필드에 필요한 내용이 모두 채워졌는지 검사**한다. 
+
+> HTML4에서는 자바스크립트로 처리했지만 HTML5에서는 required 속성 사용
 
 
 
 
 
+### 6. `<select>`, `<optgroup>`, `<option>` 태그
+
+- 최대한 공간을 적게 사용하면서 여러 가지 옵션을 표시하는 드롭다운 목록 만들기
 
 
+
+#### `<option>`태그의 속성
+
+- value : 옵션을 선택했을 때 서버로 넘겨질 값 
+
+- selected : 화면에 표시될 때 기본으로 선택될 옵션 지정
+
+
+
+<select >
+    <option value="computer">컴퓨터공학</option>
+    <option value="mechanic">기계공학</option>
+    <option value="indust">산업공학</option>
+    <option value="elec">전자공학</option>
+</select>
+
+```html
+<select >
+    <option value="computer">컴퓨터공학</option>
+    <option value="mechanic">기계공학</option>
+    <option value="indust">산업공학</option>
+    <option value="elec">전자공학</option>
+</select>
+```
+
+#### 속성
+
+- size : 드롭다운 옵션의 개수
+- multiple : 컨트롤 키 누른 상태로 여러 옵션 선택 가능
+
+
+
+
+
+### 7. `<textarea>` 태그
+
+- 한 줄 이상의 문장을 입력할 때 사용하는 폼
+
+  `<textarea [속성="속성 값"]> 내용 </textarea>`
+
+ 태그의 속성
+
+1. name : 텍스트 영역의 이름을 지정합니다.
+
+2.  cols: 텍스트 영역의 가로 너비를 문자단위로 지정
+
+3.  rows : 텍스트 영역의 세로 길이를 줄 단위로 지정.
+
+   
 
 
