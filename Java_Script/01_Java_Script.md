@@ -78,9 +78,9 @@
 
 >  화면에 알림창으로 출력
 
+##### 	2. write
 
 
-2. ###### write()
 
 ![image-20200102011519018](01_Java_Script.assets/image-20200102011519018.png)
 
@@ -88,9 +88,168 @@
 
 
 
-3. ###### console.log()
+##### 	3. console.log()
 
 ![image-20200102011642363](01_Java_Script.assets/image-20200102011642363.png)
 
 > 개발자 도구에서 확인 할 수 있는 console창에 출력 
+
+
+
+
+
+### 5. 입력
+
+	1. ##### prompt() 
+
+![image-20200103220840777](01_Java_Script.assets/image-20200103220840777.png)
+
+
+
+
+
+2. ##### confirm()
+
+![image-20200103220908672](01_Java_Script.assets/image-20200103220908672.png)
+
+
+
+
+
+### 6. 여러가지 기능
+
+1. ##### 팝업창 window.open
+
+```html
+<script>
+ function openPopup() {
+ 	var popup = window.open("", "", "width=400 height=300");
+ 	popup.document.write(
+ 	"<input type='button' value='닫기' onclick='window.close()'>");
+ }
+ </script>
+```
+
+
+
+2. ##### 화면 및 브라우저 크기 window.screen.width
+
+```html
+   <script>
+    	var w = window.screen.width;
+    	var h = window.screen.height;
+    	var w2 = window.innerWidth;
+    	var h2 = window.innerHeight;
+    	alert("화면크기 : " + w + ", " + h);
+    	alert("브라우저크기 : " + w2 + ", " + h2);
+   
+    	document.write("화면크기 : " + w + ", " + h);
+    	document.write("<br>");
+    	document.write("브라우저크기 : " + w2 + ", " + h2);
+    </script>
+```
+
+   
+
+3. ##### input 태그의 value
+
+```html
+    <body>
+    <form>
+    	<input type="text" name="id" value="아이디1">
+    	<input type="text" name="id" value="아이디2">
+    </form>
+    <form>
+    	<input type="text" name="pw" value="비밀번호1">
+    	<input type="text" name="pw" value="비밀번호2">
+    </form>
+   
+    	<script>
+    	alert(document.forms[0].id[0].value);
+    	alert(document.forms[1].pw[1].value);
+    	</script>
+    </body>
+   
+```
+
+   
+
+4. ##### event - click 
+
+```
+<head>
+<script>
+	function fnClick(obj) {
+ 	if(obj.value == '') {
+ 		alert("입력된 값 : " + obj.value);
+	 }
+ }
+ </script>
+ </head>
+ 
+ <body>
+ 	<form>
+ 	<input type="text" name="id" value="아이디1" onclick="fnClick(this)">
+ 	<input type="text" name="id" value="아이디2">
+ 	</form>
+ </body>
+```
+
+
+
+5. ##### event - down / out / over
+
+```html
+<html>
+ <head>
+ <script>
+ function fnMouseDown() {
+	 alert("아이디2 마우스 클릭");
+ }
+ function fnMouseOut(obj) {
+ 	obj.style.backgroundColor = "#ffffff";
+ }
+ function fnMouseOver(obj) {
+ 	obj.style.backgroundColor = "#ff0000";
+ }
+ </script>
+ </head>
+    
+ <body>
+ 	<form>
+ 		<input type="text" name="id" value="아이디1">
+ 		<input type="text" name="id" value="아이디2"
+		 onmousedown="fnMouseDown()"
+ 		onmouseout="fnMouseOut(this)" onmouseover="fnMouseOver(this)">
+	 </form>
+ </body>
+</html>
+```
+
+
+
+6. ##### event - onload
+
+```html
+<html>
+ 	<head>
+ 	<script>
+ 	function fnOnLoad() {
+ 	document.forms[0].title.addEventListener("click", function() {
+ 	var value = this.value;
+	 alert(value + " 클릭");
+ 	});
+ }
+ </script>
+ 
+ </head>
+ 	<body onload="fnOnLoad()">
+ 	<form>
+ 		<input type="text" name="title" value="제목">
+ 	</form>
+ 	</body>
+</html>
+```
+
+
 
