@@ -119,4 +119,72 @@ change라는 변수에 클래스를 저장하고 그 클래스를 통해서 스�
 
 
 
-### 5.DOM
+### 5. 사용자와 커뮤니케이션 하기
+
+
+
+#### alert 
+
+---
+
+경고창이라고 부른다. 사용자에게 정보를 제공하거나 디버깅등의 용도로 많이 사용한다.
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="alert" 						onclick="alert('hello world');" />
+    </body>
+</html>
+```
+
+
+
+#### confirm
+
+---
+
+사용자에게 확인/ 취소 값을 받는 창을 띄운다
+
+```html
+    <body>
+        <input type="button" value="confirm" onclick="func_confirm()" />
+        <script>
+            function func_confirm(){
+                if(confirm('ok?')){
+                    alert('ok');
+                } else {
+                    alert('cancel');
+                }
+            }
+        </script>
+    </body>
+```
+
+
+
+#### prompt
+
+---
+
+사용자에게 데이터 값을 받는 명령어
+
+```html
+    <body>
+        <input type="button" value="prompt" onclick="func_prompt()" />
+        <script>
+            function func_prompt(){
+                if(prompt('id?') === 'egoing'){
+                    alert('welcome');
+                } else {
+                    alert('fail');
+                }
+            }
+        </script>
+    </body>
+```
+
+> 만약 사용자에게 받는 값이 egoing이라면 welcome 이라는 창이, 그 밖에 다른 값들이라면 fail 이 뜬다. 
+
+
+
