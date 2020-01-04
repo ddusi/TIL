@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <script>
+        function fnOnLoad() { //fnOnLoad 라는 함수를 만듦
+            document.forms[0].title.addEventListener("click", function () {
+                // document > forms[0] > title > addEventListener
+                var value = this.value;
+                alert(value + "클릭");
+            });
+        }
+    </script>
+</head>
+
+<body onload="fnOnLoad()">
+    <form>
+        <input type="text" name="title" value="제목">
+    </form>
+</body>
+</html>
