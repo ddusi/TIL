@@ -151,3 +151,44 @@ body>
 </body>
 ```
 
+
+
+
+
+
+
+### 2. 라이브러리
+
+자주 사용하는 로직을 편리하게 재사용 할 수 있도록 고안된 소프트웨어를 라이브러리라고 한다. 
+
+
+
+
+
+### 3. jQuery
+
+ 제이커리는  DOM을 내부에 감추고 보다 쉽게 웹페이지를 조작 할 수 있도록 돕는 도구이다.  
+
+
+
+```html
+<body>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+    jQuery( document ).ready(function( $ ) {
+      $('body').prepend('<h1>Hello world</h1>');
+    });
+    </script>
+</body>
+```
+
+
+
+
+
+
+
+
+
+
+
