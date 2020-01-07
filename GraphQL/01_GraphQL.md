@@ -1,5 +1,9 @@
 # GraphQL
 
+영화 API를 만들자! 
+
+GraphQL의 기본 원리를 배우고 GraphQL-Yoga를 사용하여 NodeJS + GraphQL서버를 만든다.
+
 
 
 ## GraphQL 설치
@@ -29,9 +33,9 @@
    yarn add graphql-yoga
    ```
 
-   ### <a src=https://yarnpkg.com/en/docs/install#mac-stable>yarn을 사용하려면 설치해야한다. </a>
+   ### <a href=https://yarnpkg.com/en/docs/install#mac-stable>yarn을 사용하려면 설치해야한다. </a>
 
-   ### <a src=https://nodejs.org/ko/download>node.js도 설치해야한다. </a>
+   ### <a href=https://nodejs.org/ko/download>node.js도 설치해야한다. </a>
 
    ```
    // 이것도 설치
@@ -72,6 +76,8 @@
    URL이 존재하지도 않고, 체계도 없다. 사용x
 
    
+   
+2. 기본문법
 
 ```graphql
 /feed/
