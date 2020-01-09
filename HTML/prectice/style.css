@@ -74,6 +74,17 @@ body::before {
     cursor: pointer;
 }
 
+.btn-area2 {margin-top: 10px;}
+.btn-area2 button {
+    width: 100%; height: 50px;
+    background: #c4160a;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
 .caption {
     margin-top: 20px;
     text-align: center;
