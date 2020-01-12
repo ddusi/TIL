@@ -285,7 +285,7 @@ $ python -m venv test-env
 
 #### 설치
 
-1. md 창에서 `conda install jupyter` 실행
+1. cmd 창에서 `conda install jupyter` 실행
 
 2. 설치 완료 후 cmd 창에서 `jupyter notebook` 실행
 
