@@ -66,7 +66,7 @@ print(result4)
 #### import 말고 from으로 활용
 
 ```python
-#import로 불러오면 항상 random.randint를 써야한다.
+#import로 불러오면 항상 클래스.함수()를 써야한다.
 import random
 random.randint(1, 3)
 
@@ -74,4 +74,36 @@ random.randint(1, 3)
 from random import randint
 randint(1, 3)
 ```
+
+
+
+
+
+## 패키지 (Package)
+
+모듈을 계층(디렉토리) 구조로 관리하는 것 
+
+
+
+
+
+
+
+예외처리
+
+내장함수
+
+외장함수
+
+정규식
+
+크롤링
+
+데이터베이스
+
+
+
+
+
+
 
