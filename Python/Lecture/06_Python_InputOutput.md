@@ -30,7 +30,7 @@ print(type(text))
 
 
 
-## 2. 출력 (print)
+## 02. 출력 (print)
 
 #### - 특정 값을 화면에 출력
 
@@ -89,7 +89,7 @@ for i in range(1, 11):
 
 
 
-## 파일 
+## 03. 파일 
 
 #### 1. 생성/열기 : open()
 
@@ -140,4 +140,82 @@ for i in range(1, 11):
 - 대상 파일이 없는 경우 새 파일을 생성 후 내용 입력
 
   ![image-20200115121238117](06_Python_InputOutput.assets/image-20200115121238117.png)
+
+
+
+
+
+## 04. 바이너리 모드
+
+ #### - 바이너리 모드 (wb/rb) - List, Tuple
+
+```python
+file = open('경로', 'wb')
+```
+
+
+
+![image-20200115201830904](06_Python_InputOutput.assets/image-20200115201830904.png)
+
+
+
+#### - 바이너리 모드 (wb/rb) - Dictionary
+
+![image-20200115202027912](06_Python_InputOutput.assets/image-20200115202027912.png)
+
+> 저장할 때, key 값만 불러온다. 그리하여 제대로 저장 하기위해선 pickle라이브러리가 필요함.
+
+#### - 바이너리모드 (wb/rb) - Set
+
+![image-20200115202035238](06_Python_InputOutput.assets/image-20200115202035238.png)
+
+
+
+#### - pickle 모듈을 이용한 바이너리 저장
+
+ pickle 모듈을 이용하면 원하는 데이터를 **자료형의 변경없이** 파일로 저장하여 그대로 로드할 수 있다.
+
+![image-20200115202304343](06_Python_InputOutput.assets/image-20200115202304343.png)
+
+##### 1. 입력 : pickle.dump(data(자료형), file)
+
+```python
+>>> import pickle
+>>> list = ['a', 'b', 'c']
+>>> with open('list.txt', 'wb') as f:
+...     pickle.dump(list, f)
+```
+
+
+
+##### 2. 불러오기 : 변수 = pickle.load(file)
+
+한줄씩 파일을 읽어오고 더이상 로드할 데이터가 없으면 `EOFError` 발생
+
+```
+>>> with open('list.txt', 'rb') as f:
+...     data = pickle.load(f) # 단 한줄씩 읽어옴
+
+>>> data
+['a', 'b', 'c']
+```
+
+
+
+
+
+## 05. with
+
+- 파이썬의 프로그램은 `__enter__`와 `__exit__` 메소드를 가질 수 있는데 with 블럭의 시작과 끝 부분에서 자동으로 실행됨
+
+![image-20200115203154798](06_Python_InputOutput.assets/image-20200115203154798.png)
+
+![image-20200115203211151](06_Python_InputOutput.assets/image-20200115203211151.png)
+
+```python
+>>> import pickle
+>>> list = ['a', 'b', 'c']
+>>> with open('list.txt', 'wb') as f:
+...     pickle.dump(list, f)
+```
 
