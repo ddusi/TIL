@@ -34,7 +34,7 @@
 
 ​	<연습문제>
 
-![image-20200115113158967](10_Python_내장함수.assets/image-20200115113158967.png)
+![image-20200115113158967](10_Python_Built-in function.assets/image-20200115113158967.png)
 
 ```python
 def distance(start, end):
@@ -71,7 +71,7 @@ False
 
 <연습문제>
 
-![image-20200115113959300](10_Python_내장함수.assets/image-20200115113959300.png)
+![image-20200115113959300](10_Python_Built-in function.assets/image-20200115113959300.png)
 
 ```python
 print('컴파일 언어가 아닌 것은?')
@@ -152,7 +152,7 @@ False
 
 > 예를들어 리스트에서 append를 사용하려는데 만약 안될때, dir을 사용하여 속성들 함수들을 살펴볼 수 있다.
 
-![image-20200115114419774](10_Python_내장함수.assets/image-20200115114419774.png)
+![image-20200115114419774](10_Python_Built-in function.assets/image-20200115114419774.png)
 
 #### 6. divmod()
 
