@@ -513,5 +513,7 @@ cmd 창 > conda install selenium
 
 
 
-phantomjs
+## phantomJs
+
+https://phantomjs.org/download.html
 
