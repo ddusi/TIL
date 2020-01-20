@@ -204,6 +204,33 @@ SELECT ENAME, DEPTNO FROM EMP
 
 
 
+- ORDER BY [속성] DESC/ASC : 오름차순, 내림차순 정렬
+
+  ```SQL
+  SELECT [DISTINCT] 속성 리스트
+  FROM 테이블
+  [WHERE 조건]
+  [ORDER BY 속성 리스트 [ASC | DESC]];
+  ```
+
+  
+
+
+
+페이지 함수
+
+```python
+now_page =10
+show_cnt = 5
+
+# 0~5
+end = now_page * show_cnt
+start = end - show_cnt
+print(start, end)
+```
+
+
+
 
 
 엑셀 함수 
