@@ -35,4 +35,84 @@
 
 - key /value Store 
   - 대부분의 NoSQL은 Key/value 개념 지원
-  - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```sql
+db.prod.find({$or:[  ]})
+{ price : {$gte: 1010, $lte: 1020}}
+{ price : {$gt: 1070, $lt: 1100}}
+
+db.prod.find({$or:[{ price : {$gte: 1010, $lte: 1020}}, 
+                  { price : {$gt: 1070, $lt: 1100}} ]})
+
+for (var i = 1; i <= 100; i++) {
+	db.prod.save({
+		name: 'name-' + i,
+		price: 1000 + i,
+		count: i * 10
+	})
+}
+```
+
+
+
+
+
+데이터가 너무 많기 때문에 자동으로인덱싱 작업이 일어날 수 있도록 해주는 것 noSQL
+
+Rdbms에서는 키를 주는게 일반적
+
+인덱스를 항상 동기화 시킬 필요가 있다.
+
+빈번하게 사용하게되면 컴퓨터에 부하가 일어난다. 
+
+
+
+MongoDB는 키가 있냐는게 중요한게 아니라 이런 데이터가 있냐 없냐가 중요
+
+데이터를 주로 저장, 조회만 하고 삭제나 수정이 없는 없무에 적합.
+
+
+
+인덱스를 어떻게 지정해 줄수 있을 까?
+
+### 인덱스 확인
+
+```
+db.person.getIndexes()
+# 데이터 안에 무엇이 들어 있는가? 보는 것
+# person안에 데이터가 없지만 먼저 인덱스를 주는 것이 가능
+```
+
+
+
+### 인덱스 생성 (1: 오름차순, -1: 내림차순)
+
+```
+db.person.ensureIndex({ name : 1 })
+
+```
+
+
+
+### 인덱스 생성 ( unique : 중복 데이터 저장 불가)
+
+```
+db.person.ensureIndex( { name : 1 }, { unique : true})
+```
+
+
+
