@@ -1,0 +1,12 @@
+<body>
+    <h1>show</h1>
+    <hr>
+    {% for item in result %}
+        <h3>{{ item.shop_id }}</h3><br>
+        {{ item.img_path }} <br>
+        {{ item.shop_name }} <br>
+        {{ item.shop_desc }} <br>
+        {{ item.rest_data }} <br>
+        {{ item.parking_info }} <br>
+    {% endfor %}
+</body>
