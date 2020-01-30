@@ -1,9 +1,13 @@
 <body>
     <h1>shop List</h1>
-    <!-- {{shopList}} -->
+    {%for item in shopList%}
+        id = {{item.id}} <br>
+        name = {{item.name}} <br>
+        desc = {{ item.desc}} <br>
+        rest_date = {{item.rest_date}} <br>
+        img_path = {{item.img_path}} <br> <hr>
+
+    {%endfor%}
     <br>
-    <!-- {%for item in shopList%}
-        {{item.id}} / {{item.name}}
-    {%endfor%} -->
 
 </body>
