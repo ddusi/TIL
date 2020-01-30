@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.test import TestCase
 
-def index1(request):
- return HttpResponse('<h1>Main</h1>')
+# Create your tests here.

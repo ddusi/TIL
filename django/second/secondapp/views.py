@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import shop
 
+# Create your views here.
 def main(request):
-    return HttpResponse('hello')
+    shopList = shop.objects.all()
+    return render(request, 'secondapp/main.html', {'shopList':shopList})

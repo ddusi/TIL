@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ai5!ly1tpa5b0@3jcsr0w0j83+@&lue=jq*zawuef)x8-8c8fj'
+SECRET_KEY = 'hwl&q9=8k+-fmc@vxkyi%ak$owf42@an2^xlhc*a8lq%1=0enw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'secondapp',
 ]
 
 MIDDLEWARE = [
@@ -74,10 +75,14 @@ WSGI_APPLICATION = 'second.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+ 'default': {
+ 'ENGINE': 'django.db.backends.mysql',
+ 'NAME': 'pythondb',
+ 'USER': 'root',
+ 'PASSWORD': '123',
+ 'HOST': 'localhost',
+ 'PORT': 3306
+ }
 }
 
 
@@ -105,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = 'Aisa/Seoul'
 
 USE_I18N = True
 
