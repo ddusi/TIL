@@ -1,0 +1,6 @@
+<a href="{% url 'polls:detail' question.id %}"></a>
+{% for question in latest_question_list %}
+    <a href='/polls/{{ question.id }}'>
+    <p>{{ question.question_text }}</p>
+    </a>
+{% endfor %}
