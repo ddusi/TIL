@@ -72,6 +72,9 @@ def results(request, question_id): # 투표 결과 페이지
         {'choices':choices}
     )
 
+# @csrf_expt
+# ajax 호출 시 주로 사용, csrf 기능 무효화
+
 def vote(request, question_id): # 투표 페이지
     num = request.POST['choice']
     choice = Choice.objects.get(pk=num)
@@ -83,3 +86,8 @@ def vote(request, question_id): # 투표 페이지
     # choice.votes += 1
 
     return HttpResponse("You're voting on question %s." % question_id)
+    
+    # 1번 방식 : 평범한 웹사이트 주소 호출 
+    # return HttpResponse('<script>alert("완료");history.back();</script>')
+
+    # 2번 방식 : ajex 투표하는 화면(HTML)에서 ajax 코드 작성
