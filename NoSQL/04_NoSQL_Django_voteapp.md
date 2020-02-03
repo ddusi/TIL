@@ -40,12 +40,12 @@ urlpatterns = [
 mysite/urls.py #접속사이트 라우팅 만들기
 
 urlpatterns = [
-	path('polls/', views.index, name='polls'),
+	path('polls/', include('polls.urls')),
 ]
 ```
 
 ```python
-pythonfrom django.db import models
+from django.db import models
 class Question(models.Model):
    question_text = models.CharField(max_length=200)
    pub_date = models.DateTimeField('date published')
@@ -236,6 +236,14 @@ def index(request):
 post 방식일때 CSRF 기능 적용
 
 
+
+파이썬 기반 웹프레임워크는 클라우드 호스팅을 쓰지않으면 사용하기 어렵다. 
+
+
+
+무료 호스팅 클라우드
+
+pythonanywhere 무료 3개월
 
 
 

@@ -3,16 +3,25 @@
     <p><strong>{{ error_message }}</strong></p>
 {% endif %}
 
-<form action="{% url 'detail' question.id %}" method="post">
-{% csrf_token %}
 
+<!-- post 방식일때 csrf 기능 적용 -->
+<form action="{% url 'vote' question.id %}" method="post">
+
+    {% csrf_token %}
     {% for choice in question.choice_set.all %}
     <input type="radio" name="choice"
     id="choice{{ forloop.counter }}" value="{{ choice.id }}">
     <label for="choice{{ forloop.counter }}">
     {{ choice.choice_text }}
     </label><br>
-{% endfor %}
 
+{% endfor %}
  <input type="submit" value="Vote">
 </form>
+
+<button onclick="move()">투표결과 확인</button>
+<script>
+    function move() {
+        location = '/polls/{{question.id}}/results/'
+    }
+</script>
