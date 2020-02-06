@@ -1,3 +1,12 @@
+## Django 설치하기 
+
+1.  `conda install django` : django 설치
+2. `conda istall mysqlclient` : DB에 맞는거 설치
+3. maria DB, heidiSQL 설치
+4. 
+
+
+
 ## Django
 
 - 2003년에 신문사에서 사용하기 위해 개발
