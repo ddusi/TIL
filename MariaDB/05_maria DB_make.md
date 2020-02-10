@@ -1,14 +1,68 @@
-## 데이터베이스 설계
+
+
+
+
+
+
+
 
 
 
 ## 00. 설치 
 
-Eclipse IDE를 설치한 후, 모델링 플러그인을 설치. 
+
+
+#### - Eclipse IDE를 설치한 후, 모델링 플러그인을 설치. 
 
 <a href='http://ko.exerd.com/down.jsp#a3'> Exerd</a> 여기서 다운로드 링크 복사후, 이클립스 소프트웨어 설치하기로 설치하기.
 
-![image-20200123123958728](C:\Users\ai919\AppData\Roaming\Typora\typora-user-images\image-20200123123958728.png)
+![image-20200204171942745](05_maria DB_make.assets/image-20200204171942745.png)
+
+
+
+
+
+#### - Eclipse IDE에 설치하기 
+
+help > install New Software > work with에 링크 삽입후 엔터! 
+
+![image-20200204172242074](05_maria DB_make.assets/image-20200204172242074.png)
+
+
+
+
+
+#### - Project 생성 후, eXERD File 생성 (대상 DB 설정!)
+
+![image-20200204172509026](05_maria DB_make.assets/image-20200204172509026.png)
+
+
+
+#### - 테이블 생성후 튜블, 속성 넣기
+
+![image-20200204172713218](05_maria DB_make.assets/image-20200204172713218.png)
+
+##### 명령어들
+
+튜플생성 : `ctrl + enter`
+
+기본키로 튜플 생성 : `ctrl + Shift + enter`
+
+속성 들어가기 : `space bar`
+
+
+
+##### 알아야 할 것들
+
+1. 논리 속성과 물리 속성은 다른것. 
+
+   > 논리 속성은 사용자가 보기 편하게 하는것이고, 실제로 이름 들어가는건 다 물리 속성!
+
+2. 데이터 타입, 참조조건 다 넣어줘야함.
+
+
+
+
 
 
 
@@ -18,19 +72,17 @@ Eclipse IDE를 설치한 후, 모델링 플러그인을 설치.
 
 
 
-리버스 엔지니어링 : import
+##### - 리버스 엔지니어링 : import
 
-포워드 엔지니어링 : export
+##### - 포워드 엔지니어링 : export
 
-자바로 만든 프로그램이기 때문에 자바 라이브러리가 필요하다. 
+> export를 하기 위해선 자바로 만든 프로그램이기 때문에 자바 라이브러리가 필요하다.  그러므로 포워드 엔지니어링을 하기 위해선 다운!
 
-그러므로 포워드 엔지니어링을 하기 위해선 다운!
+1. mvnrepository.com에서 [MySQL Connector/J](https://mvnrepository.com/artifact/mysql/mysql-connector-java) » [5.1.48](https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.48)설치!
 
-mvnrepository.com에서 [MySQL Connector/J](https://mvnrepository.com/artifact/mysql/mysql-connector-java) » [5.1.48](https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.48)설치!
+2. window - preferences - eXERD > DBMS 연결설정 > 새연결 > MySQL > JDBC 드라이버 파일
 
-window - preferences - eXERD > DBMS 연결설정 > 새연결 > MySQL > JDBC 드라이버 파일
-
-![image-20200123141718819](C:\Users\ai919\AppData\Roaming\Typora\typora-user-images\image-20200123141718819.png)
+![image-20200204170656906](05_maria DB_make.assets/image-20200204170656906.png)
 
 
 
@@ -146,3 +198,9 @@ window - preferences - eXERD > DBMS 연결설정 > 새연결 > MySQL > JDBC 드�
     > 항상 close를 해줘야 한다. 만약 안한다면 다른사람이 접속을 못할 수도 있다. 
     >
     > 예를들어 한 DB같은 경우에는 1000명 정도만 동시접속 가능하기 때문이다.
+
+
+
+
+
+![image-20200204171750317](05_maria DB_make.assets/image-20200204171750317.png)

@@ -1,0 +1,20 @@
+>use exam
+switched to db exam
+
+> db
+exam
+
+> show collections
+product
+
+>db.product.save({ company:'광동제약', prd_name:'제주삼다수2L', price:'800'})
+>db.product.save({ company:'스파클', prd_name:'스파클2L', price:'460'})
+>db.product.save({ company:'농심', prd_name:'백두산 백산수2L', price:'670'})
+>db.product.save({ company:'동원F&B', prd_name:'동원샘물2L', price:'500'})
+WriteResult({ "nInserted" : 1 })
+
+> db.product.find()
+{ "_id" : ObjectId("5e37d7ec0947728ddd33f88e"), "a" : 1 }
+{ "_id" : ObjectId("5e37d9400947728ddd33f894"), "company" : "스파클", "prd_name" : "스파클2L", "price" : "460" }
+{ "_id" : ObjectId("5e37d9400947728ddd33f895"), "company" : "농심", "prd_name" : "백두산 백산수2L", "price" : "670" }
+{ "_id" : ObjectId("5e37d9430947728ddd33f896"), "company" : "동원F&B", "prd_name" : "동원샘물2L", "price" : "500" }

@@ -1,0 +1,23 @@
+CREATE TABLE 학과(
+	학과번호 INT,
+	학과명 VARCHAR(50),
+	PRIMARY KEY(학과번호)
+	);
+	
+CREATE TABLE 교수(
+	교수번호 INT,
+	이름 VARCHAR(50),
+	직급 VARCHAR(20),
+	급여 INT,
+	학과번호 INT,
+	FOREIGN KEY(학과번호) REFERENCES 학과(학과번호),
+	PRIMARY KEY(교수번호)
+);	`학과`
+
+SELECT 학과명 FROM 학과
+LEFT JOIN 교수
+ON 학과.`학과번호` = 교수.`학과번호`
+WHERE 교수.`학과번호` IS NULL
+
+
+	
