@@ -61,18 +61,3 @@ import numpy as np
 ndarray 클래스
 
 numpy의 핵심은 ndarray라고 하는 클래스이다. `ndarray` 클래스는 다차원 행렬 자료 구조를 지원한다. 실제로 ndarray를 사용하여 1차원 행렬(벡터)을 만들어 보자
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
