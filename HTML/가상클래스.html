@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a:link{color : darkolivegreen;}
+        /* 방문하지 않은 링크 */
+        a:visited{ color : aquamarine;}
+        /* 방문한 링크를 선택 */
+        p:active{color:gold;}
+        /*마우스로 클릭한 상태*/
+        p:hover{color:red;}
+        /*마우스를 태그위에 올린 상태(active와 중복적용 안됌.)*/
+        input:focus{background: green;}
+        /*포커스가 되어있을 때*/
+        li:nth-child(1){color:gold}
+        li:nth-last-child(2){color:green}
+        li:nth-last-of-type(2){color: red;}
+        div:nth-last-of-type(1){color:salmon;}
+        /*nth-child는 앞의 태그 선택자 자식요소들의 순서로 선택.
+        하지만, type를 지정하면 선택한 타입별로 순서 선택가능*/
+        li:nth-child(1)::before{
+            content: "before";
+            color: red;
+        }
+        li:nth-child(1)::after{
+            content: "after";
+            color: royalblue;
+        }
+        /*::before, ::after 가상선택자 같은경우, 컨텐츠 내용을 넣고
+        스타일 적용시키는 것. */
+    </style>
+</head>
+<body>
+    <a href="http://ddusi.github.io/color">뚜시블로그</a>
+    <a href="http://www.naver.com">네이버</a>
+    <p>클릭해 보시오.</p>
+    <input type="text">
+    <ul>
+        <li>첫번째 자식</li>
+        <li>두번째 자식</li>
+        <li>세번째 자식</li>
+        <li>네번째 자식</li>
+        <div>테스트</div>
+    </ul>
+</body>
+</html>
