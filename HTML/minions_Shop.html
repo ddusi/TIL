@@ -15,12 +15,82 @@
             padding: 30px 0px;
             background-color: #fff;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-            /* transition: 0.5s; */
+            font-size: 25px;
             }
+        .header h1 {
+            margin: 10px;
+        }
 
         .nav {
             display: inline-block;
             width: 100px;
+            font-weight:600;
+            font-size:20px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(2, 300px);
+            grid-template-rows: auto repeat(7, 560px);
+            justify-content: center;
+            gap: 10px;
+
+        }
+        .total {
+            grid-column: 1/3;
+            height: 15px;
+            font-size: 20px;
+            padding: 10px;
+            padding-bottom: 20px;
+        }
+
+        .item {
+            grid-column: 1/1;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .box{
+            display: grid;
+            grid-template-rows: 254px repeat(3,auto);
+            padding: 15px;
+            height: 50px;
+            padding-top: 0px;
+        }
+
+        .slide{
+            width: 254px;
+            height: 254px;
+            justify-self: center;
+            align-self: center;
+        }
+        img {
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            padding-top: 10px;
+            }
+        .price{
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 10px;
+        }
+        .des{
+            font-size: 15px;
+            font-weight: lighter;
+            padding-top: 20px;
+        }
+        .box p {
+            margin: 0px;
+        }
+        .total span {
+            font-weight: bold;
+            color: cadetblue;
+            font-size: 25px;
         }
 
     </style>
@@ -37,24 +107,63 @@
         </header>
         
         <div class="content">
-            <div>Total</div>
-            <ul class="item">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-                <li>13</li>
-                <li>14</li>
-                <li>15</li>
-            </ul>
+            <div class="total">Total <span>21</span> </div>
+            <div class="itme box">
+                <div class="slide">
+                    <img src="//thumbnail11.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/45899273446205-4d821d32-0545-49df-8316-3ff980ce0f66.bin" alt="">
+                </div>
+                <p class="name">아이리버 미니언즈 무선 가습기</p>
+                <p class="price">32,900원</p>
+                <p class="des">내 피부 촉촉, 아이리버 미니언즈 무선 가습기</p>
+            </div>
+            <div class="itme box">
+                <div class="slide">
+                    <img src="//thumbnail12.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/315a/74e78dde86dc78c69020a137412ada03afb767d4cdc060a81b4553bb9a94.jpg" alt="">
+                </div>
+                <p class="name">미니언즈 캐릭터 에어팟케이스 정품</p>
+                <p class="price">9,900원</p>
+                <p class="des">유니버셜 공식 에어팟 케이스</p>
+            </div>
+            <div class="itme box">
+                <div class="slide">
+                    <img src="//thumbnail14.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/images/2016/09/24/1/5/544d01c1-284e-4ef6-8ab3-1670134aa9ba.jpg" alt="">
+                </div>
+                <p class="name">미니언즈 치약짜개 치약디스펜서 칫솔걸이</p>
+                <p class="price">4,800원</p>
+                <p class="des">양치질! 귀찮아 하는 아이들 때문에 힘드셨죠?</p>
+            </div>
+            <div class="itme box">
+                <div class="slide">
+                    <img src="//thumbnail13.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2017/09/14/11/4/48328da9-d217-4990-a23b-9c09c4850c25.jpg" alt="">
+                </div>
+                <p class="name">미니언즈 케빈 원형롱 베게</p>
+                <p class="price">16,550원</p>
+                <p class="des">귀여운 미니언즈 원형롱 베게</p>
+            </div>
+            <div class="itme box">
+                <div class="slide">
+                    <img src="//thumbnail14.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/341342136837952-6489729a-b579-4ea0-a6b1-3d6659810e57.jpg" alt="">
+                </div>
+                <p class="name">미니언즈 머그컵 2p</p>
+                <p class="price">12,950원</p>
+                <p class="des">앙증맞은 미니언즈 머그컵</p>
+            </div>
+            <div class="itme box">
+                <div class="slide">
+                    <img src="//thumbnail15.coupangcdn.com/thumbnails/remote/230x230ex/image/vendor_inventory/images/2019/03/18/20/3/4607b577-55fc-4437-a96e-9040634f0261.jpg" alt="">
+                </div>
+                <p class="name">미니언즈 캐릭터 패션양말 라이센스 정품</p>
+                <p class="price">32,900원</p>
+                <p class="des">당일발송 6켤레 1묶음 테마미니언즈</p>
+            </div>
+            <div class="itme box">
+                <div class="slide">
+                    <img src="//thumbnail13.coupangcdn.com/thumbnails/remote/230x230ex/image/vendor_inventory/images/2018/01/17/20/5/ac68c50d-6720-448a-8062-d1cafe6fceba.jpg" alt="">
+                </div>
+                <p class="name">미니언즈 LED스탠드 무드등</p>
+                <p class="price">10,400원</p>
+                <p class="des">이지컴퍼니코리아 정식라이센스 LED스탠드 무드등</p>
+            </div>
         </div>
     </div>
 
