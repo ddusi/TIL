@@ -42,9 +42,11 @@
 
    > branch 그리는 사이트
 
-10. `git branch -d [지울 브랜치 이름]` : 병합후 브랜치 찌꺼기를 지움
+10. `git branch -d [지울 브랜치 이름]` : 병합후 브랜치 찌꺼기를 지움.
 
-11. merge는 방법이 3가지가 있다.
+11. `git checkout -b [브랜치 이름] `: 브랜치 생성 후, 바로 브랜치로 이동. 
+
+12. merge는 방법이 3가지가 있다.
 
     ###  1.Fast Forward Merge 
 
@@ -84,3 +86,4 @@
 13. `git reset [주소]` : merge를 롤백 시킴 
 
 14. `git switch -c new` : 브랜치를 만듦과 동시에 이동.
+
