@@ -154,7 +154,7 @@ help > install New Software > work with에 링크 삽입후 엔터!
 
 2. 개체 추출, 각 개체의 주요 속성과 키 속성 선별
 
-   ![image-20200123121413744](C:\Users\ai919\AppData\Roaming\Typora\typora-user-images\image-20200123121413744.png)
+   ![image-20200123121413744](C:\Users\ai9198\AppData\Roaming\Typora\typora-user-images\image-20200123121413744.png)
 
 - 추출 결과
   - 개체: 상품
